@@ -172,7 +172,23 @@ With the command, we can apply Intel calibration tool to produce FP32 model to I
  $ cd C:\Users\arbula\Documents\Intel\OpenVINO\inference_engine_samples_2017\intel64\Release
  $ calibration_tool.exe -t C -i C:\tmp\virtualenv\TF-poet\tensorflow-for-poets-2\tf_files\RemoveTravel -m RemoveTravel_graph_FP32.xml -lbl RemoveTravel_graph_FP32.labels
  </pre>
- It cost more than 20 hours on Maldives Swift 7 for this model
+ It cost about 20 hours on Maldives Swift 7 for this model
+
+ Finally, you will see the results
+
+ <img src = 'image/calibration_tool.jpg'> <br/>
+
+and see IR files produced and located at C:\Users\arbula\Documents\Intel\OpenVINO\inference_engine_samples_2017\intel64\Release
+ <img src = 'image/INT8.jpg'> <br/>
+
+In the end, copy labels file and rename as RemoveTravel_graph_FP32_i8.labels, do the inference
+<pre>
+ $ classification_sample.exe -i C:\Users\arbula\Downloads\dog1.jpg -m RemoveTravel_graph_FP32_i8.xml
+ </pre>
+
+ You will see the inference results as
+  <img src = 'image/INT8_results.jpg'> <br/>
+
 
 ## Credits 
 
